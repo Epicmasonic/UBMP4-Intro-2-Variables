@@ -118,7 +118,7 @@ int main(void)
  *    value of the SW2Count variable? Can you explain what happens to the
  *    SW2Count variable as the SW2 button is held?
  * 
- #		!
+ #		LED4 turns off for a bit because SW2Count keeps overflowing when it trys to go higher than 11111111
  * 
  * 5. We can set a limit on the SW2Count variable by encapsulating its increment
  *    statement inside a conditional statement. In your program, replace the
