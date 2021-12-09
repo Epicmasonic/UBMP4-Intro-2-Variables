@@ -37,27 +37,59 @@ int main(void)
     // Code in this while loop runs repeatedly.
     while(1)
 	{
-        // Count SW2 button presses
-        if(SW2 == 0)
+        // Count new SW2 button presses (P1)
+        if(SW2 == 0 && SW2Pressed == false)
         {
             LED3 = 1;
-            SW2Count = SW2Count + 1;
+            SW2Pressed = true;
+            if(SW2Count < 255)
+            {
+                SW2Count += 1;
+            }
         }
-        else
+
+        // Clear pressed state if released (P1)
+        if(SW2 == 1)
         {
             LED3 = 0;
+            SW2Pressed = false;
         }
         
         if(SW2Count >= maxCount)
         {
             LED4 = 1;
         }
+
+        // Count new SW2 button presses (P2)
+        if(SW5 == 0 && SW5Pressed == false)
+        {
+            LED6 = 1;
+            SW5Pressed = true;
+            if(SW5Count < 255)
+            {
+                SW5Count += 1;
+            }
+        }
+
+        // Clear pressed state if released (P2)
+        if(SW5 == 1)
+        {
+            LED6 = 0;
+            SW5Pressed = false;
+        }
+        
+        if(SW5Count >= maxCount)
+        {
+            LED4 = 1;
+        }
         
         // Reset count and turn off LED D4
-        if(SW3 == 0)
+        if(SW3 == 0 && SW4 == 0)
         {
             LED4 = 0;
             SW2Count = 0;
+            LED5 = 0;
+            SW5Count = 0;
         }
         
         // Add a short delay to the main while loop.
