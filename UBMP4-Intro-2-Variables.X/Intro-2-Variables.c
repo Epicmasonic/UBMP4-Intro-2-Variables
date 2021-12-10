@@ -100,6 +100,7 @@ int main(void)
             SW5Count = 0;
             LED1 = 0;
         }
+	    LED1 = 0;
         
         // Add a short delay to the main while loop.
         __delay_ms(10);
