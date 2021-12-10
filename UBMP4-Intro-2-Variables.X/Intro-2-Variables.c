@@ -22,11 +22,13 @@
 // TODO Set linker code offset to '800' under "Additional options" pull-down.
 
 // Program constant definitions
-const unsigned char maxCount = 50;
+const unsigned char maxCount = 15;
 
 // Program variable definitions
 unsigned char SW2Count = 0;
 bool SW2Pressed = false;
+unsigned char SW5Count = 0;
+bool SW5Pressed = false;
 
 int main(void)
 {
@@ -80,16 +82,23 @@ int main(void)
         
         if(SW5Count >= maxCount)
         {
-            LED4 = 1;
+            LED5 = 1;
         }
         
-        // Reset count and turn off LED D4
+        // Reset count and turn off LEDs
         if(SW3 == 0 && SW4 == 0)
         {
             LED4 = 0;
             SW2Count = 0;
             LED5 = 0;
             SW5Count = 0;
+        }
+
+        if(SW3 == 0 && SW4 == 0)
+        {
+            SW2Count = 0;
+            SW5Count = 0;
+            LED1 = 0;
         }
         
         // Add a short delay to the main while loop.
@@ -262,7 +271,7 @@ int main(void)
  *    by clearing the count and turning off the LEDs if either SW3 or SW4 is
  *    pressed.
  * 
- #		!
+ #		:)
  * 
  * 2. Use your knowledge of Boolean variables and logical conditions to simulate
  *    a toggle button. Each new press of the toggle button will 'toggle' an LED
