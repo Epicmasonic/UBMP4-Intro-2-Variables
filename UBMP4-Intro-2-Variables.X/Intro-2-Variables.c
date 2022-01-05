@@ -123,7 +123,7 @@ int main(void)
  * 
  #		The maximum value of an 8-bit variable is 255
  * 
- #		!
+ #		I don't know what the benefits and drawbacks of using 8-bit variables in an 8-bit microcontroller are...
  * 
  * 2. The constant 'maxCount' is defined using a declaration similar to that
  *    used for the SW2Count variable, but with the 'const' prefix added in the
@@ -131,7 +131,7 @@ int main(void)
  *    this, using a separate statement above the main code, rather than just
  *    embedding the value of the constant where it is needed in the code?
  * 
- #		!
+ #		If you use the costant in more than one place it would be easier to change on number. 
  * 
  * 3. This program should light LED D3 every time SW2 is pressed, and light
  *    LED D4 once the count reaches 50. Try it, and count how many times you
